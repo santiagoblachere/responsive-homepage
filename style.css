@@ -2,76 +2,96 @@
     font-family: suse;
     src: url("./assets/SUSE-VariableFont_wght.ttf");
 }
+
 :root {
+    --black: #0f0f0f;
+    --white: #e5e5e5;
+    --gray: #2e2e2e;
+    --dark-gray: #1a1a1a;
+    --light-gray: #7a7a7a;
 }
+
 body {
-    background-color: grey;
+    background-color: var(--dark-gray);
     margin: 0;
-    display: block;
+    font-family: suse, sans-serif;
+    color: var(--white);
+}
+
+/* ABOUT ME SECTION */
+@media only screen and (max-width: 600px) {
+    .about-me {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+        grid-column: 1;
+        margin: 0;
+    }
+    .profile-picture {
+        min-width: 100%;
+    }
+    .about-me .about-meText {
+        margin: 0;  
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 .about-me {
     padding: 20px 40px;
-    background-color: gray;
+    background-color: var(--dark-gray);
     display: flex;
     justify-content: center;
     grid-column: 1;
-
-    
 }
 .about-meText {
-    position: relative;
-    background-color: white;
-    color: black;
-    padding: 10px;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 20px;
     margin-top: 20px;
+    width: 100%;
     max-width: 700px;
-    max-height: 400px;
-    max-width: 60%;
+    box-shadow: 3px 3px 0px var(--gray);
+    border: 2px solid var(--black);
 }
 .about-meText h2 {
     font-size: 40px;
-    font-weight: bolder;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 15px;
 }
 .about-meText p {
-    font-size: 25px;
-    color: black;
+    font-size: 22px;
+    color: var(--black);
     font-weight: 500;
+    line-height: 1.5;
 }
-h1::selection, h2::selection {
-    background-color: black;
-    color: white;
+h1::selection, h2::selection, p::selection, a::selection {
+    background-color: var(--gray);
+    color: var(--white);
 }
 img::selection {
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
 }
-p::selection, a::selection {
-    background-color: black;
-    color: white;
-}
+
+/* ICONS */
 .iconsContainer {
     position: absolute;
-    bottom:5%;
+    bottom: 5%;
     right: 5%;
 }
-.icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-}
 .icons img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    padding: 5px;
 }
-.picture {
-    min-width: 500px;
-    min-height: 500px;
-    background-image: url("./assets/pexels-olly-874158.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+
+/* PROFILE PICTURE */
 .profile-picture {
     position: relative;
     flex: 1 1 250px;
@@ -80,100 +100,85 @@ p::selection, a::selection {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: 3px solid var(--black);
+    box-shadow: 3px 3px 0px var(--gray);
 }
 .profile-picture h1 {
     position: absolute;
-    color: red;
     bottom: -20px;
     left: 15px;
     text-align: center;
-    color: white;
-    font-size: 45px;
-    text-align: center;
-}
-.profile-picture, .about-meText {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: var(--white);
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-/*  MY WORK SECTION */
-
+/* MY WORK SECTION */
 .works {
-padding: 0;
-margin: 0 auto;
-text-align: center;
+    padding: 50px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--black);
+    border-top: 4px solid var(--gray);
 }
 .works h2 {
-    font-size: 50px;
-}
-.card-container {
-    box-shadow: 0px 2px 2px rgb(0, 0, 0);
-    padding: 10px;
-    height: 350px;
-    background-color: white;
-    margin: 0;
-    padding: 0;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 30px;
 }
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 360px);
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
     justify-content: center;
 }
-.card {
-    display: grid;
-    grid-template-rows: 4fr 3fr;
-    margin: 0;
+.card-container {
+    background-color: var(--white);
+    padding: 15px;
+    height: 350px;
+    box-shadow: 3px 3px 0px var(--gray);
+    border: 2px solid var(--black);
 }
 .projectScreenshot {
-    margin: 0;
-    background-color: black;
+    background-color: var(--gray);
+    color: var(--white);
+    font-size: 22px;
     text-align: center;
-    vertical-align: center;
-    font-size: 50px;
-    color: white;
+    line-height: 150px;
+    margin-bottom: 10px;
 }
 .projectInformation {
-    padding: 0 10px;
-    position: relative;
-}
-.iconsBContainer { 
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-.iconsB  {
-    display: flex;
-    flex-direction: row;    
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    color: var(--black);
 }
 .iconsB img {
     width: 30px;
     height: 30px;
+    border: 1px solid var(--black);
 }
-/* CONTACT SECTION */
 
+/* CONTACT SECTION */
 .contact-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
     gap: 20px; 
-    padding: 25px 5%; 
-    align-items: center; 
-    gap: 0
-}
-.iconsCContainer {
-    position: absolute;
-}
-.iconsC {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
+    padding: 50px 5%;
+    background-color: var(--dark-gray);
+    border-top: 4px solid var(--gray);
+    color: var(--white);
 }
 .iconsC img {
-    padding-top: 30px;
     width: 40px;
     height: 40px;
+    border: 2px solid var(--light-gray);
+    padding: 5px;
+}
+address img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    padding-right: 10px;
 }
